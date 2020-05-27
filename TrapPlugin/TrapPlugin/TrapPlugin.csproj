@@ -74,6 +74,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\ResetPlugin\ResetPlugin\ResetPlugin\Libraries\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TrapPlugin.cs" />
@@ -88,6 +92,7 @@
     <Content Include="Libraries\Rocket.Unturned.dll" />
     <Content Include="Libraries\UnityEngine.CoreModule.dll" />
     <Content Include="Libraries\UnityEngine.dll" />
+    <Content Include="Libraries\UnityEngine.PhysicsModule.dll" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
