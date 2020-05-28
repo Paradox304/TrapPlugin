@@ -42,10 +42,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\ResetPlugin\ResetPlugin\ResetPlugin\Libraries\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="BaseClustering, Version=1.1.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libraries\BaseClustering.dll</HintPath>
-    </Reference>
     <Reference Include="Rocket.API, Version=2.6.4.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\ResetPlugin\ResetPlugin\ResetPlugin\Libraries\Rocket.API.dll</HintPath>
@@ -86,7 +82,6 @@
   <ItemGroup>
     <Content Include="Libraries\Assembly-CSharp-firstpass.dll" />
     <Content Include="Libraries\Assembly-CSharp.dll" />
-    <Content Include="Libraries\BaseClustering.dll" />
     <Content Include="Libraries\Rocket.API.dll" />
     <Content Include="Libraries\Rocket.Core.dll" />
     <Content Include="Libraries\Rocket.Unturned.dll" />
