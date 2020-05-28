@@ -74,14 +74,14 @@ namespace TrapPlugin
     public static class OnTriggerEnter_Patch
     {
         [HarmonyPrefix]
-        public static bool Prefix(Collider target, InteractableTrap __instance)
+        public static bool Prefix(Collider other, InteractableTrap __instance)
         {
             Rocket.Core.Logging.Logger.Log("1");
-            if (!target.transform.CompareTag("Player")) return true; // Not a player, we dont care, it can activate.
+            if (!other.transform.CompareTag("Player")) return true; // Not a player, we dont care, it can activate.
             Rocket.Core.Logging.Logger.Log("2");
-            if (!Provider.isPvP || target.transform.parent.CompareTag("Vehicle")) return false; // PvP is disabled or the player is in a vehicle, so ignore.
+            if (!Provider.isPvP || other.transform.parent.CompareTag("Vehicle")) return false; // PvP is disabled or the player is in a vehicle, so ignore.
             Rocket.Core.Logging.Logger.Log("3");
-            var player = DamageTool.getPlayer(target.transform);
+            var player = DamageTool.getPlayer(other.transform);
             if (player == null) return true; // Player not found, something went horribly wrong in nelson code
             Rocket.Core.Logging.Logger.Log("4");
             BarricadeManager.tryGetInfo(__instance.transform, out byte _, out byte _, out ushort _, out ushort index, out BarricadeRegion region);
