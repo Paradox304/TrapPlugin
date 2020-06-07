@@ -18,7 +18,7 @@ namespace TrapPlugin
         protected override void Load()
         {
             Rocket.Core.Logging.Logger.Log("Trap Plugin has been loaded!");
-            Rocket.Core.Logging.Logger.Log($"Version: {Assembly.GetName().Version}");
+            Rocket.Core.Logging.Logger.Log("Version: 1.0");
             Rocket.Core.Logging.Logger.Log("Made by Paradox");
             
             var harmony = new Harmony("xyz.u6s.unturnedsixsiege.trapplugin");
