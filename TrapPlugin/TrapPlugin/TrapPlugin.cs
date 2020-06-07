@@ -26,7 +26,7 @@ namespace TrapPlugin
         }
         protected override void Unload()
         {
-            Rocket.Core.Logging.Logger.Log("Reset Plugin has been unloaded!");
+            Rocket.Core.Logging.Logger.Log("Trap Plugin has been unloaded!");
         }
     }
 
