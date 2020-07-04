@@ -10,6 +10,7 @@ using Rocket.Unturned;
 using Rocket.Unturned.Events;
 using Rocket.Core;
 using Rocket.API;
+using Rocket.Unturned.Player;
 
 namespace TrapPlugin
 {
@@ -44,6 +45,7 @@ namespace TrapPlugin
             var barricadeData = region.barricades[index];
             if (barricadeData.owner == player.channel.owner.playerID.steamID.m_SteamID) return false;
             if (barricadeData.group == player.quests.groupID.m_SteamID) return false;
+            if (UnturnedPlayer.FromPlayer(player).HasPermission("onDuty")) return false;
             return true;
         }
     }
