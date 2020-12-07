@@ -22,7 +22,7 @@ namespace TrapPlugin
             Rocket.Core.Logging.Logger.Log("Version: 1.0");
             Rocket.Core.Logging.Logger.Log("Made by Paradox");
             
-            var harmony = new Harmony("xyz.u6s.unturnedsixsiege.trapplugin");
+            var harmony = new Harmony("TrapPlugin");
             harmony.PatchAll(Assembly);
         }
         protected override void Unload()
@@ -38,14 +38,13 @@ namespace TrapPlugin
         public static bool Prefix(Collider other, InteractableTrap __instance)
         {
             if (!other.transform.CompareTag("Player")) return true; // Not a player, we dont care, it can activate.
-            if (!Provider.isPvP || other.transform.parent.CompareTag("Vehicle")) return false; // PvP is disabled or the player is in a vehicle, so ignore.
+            if (!Provider.isPvP || other.transform.CompareTag("Vehicle")) return false; // PvP is disabled or the player is in a vehicle, so ignore.
             var player = DamageTool.getPlayer(other.transform);
             if (player == null) return true; // Player not found, something went horribly wrong in nelson code
             if (!BarricadeManager.tryGetInfo(__instance.transform.parent, out byte x, out byte y, out ushort plant, out ushort index, out BarricadeRegion region)) return true;
             var barricadeData = region.barricades[index];
             if (barricadeData.owner == player.channel.owner.playerID.steamID.m_SteamID) return false;
             if (barricadeData.group == player.quests.groupID.m_SteamID) return false;
-            if (UnturnedPlayer.FromPlayer(player).HasPermission("onDuty")) return false;
             return true;
         }
     }
